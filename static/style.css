@@ -1,0 +1,155 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:linear-gradient(
+    -45deg,
+    #ff6ec4,
+    #7873f5,
+    #42e695,
+    #ff9a9e,
+    #00c9ff);
+
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+
+    width:100%;
+    max-width:650px;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+
+    color:white;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+#clock{
+    font-size:1.2rem;
+    margin-bottom:20px;
+}
+
+form{
+    display:flex;
+    gap:10px;
+}
+
+input{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:16px;
+}
+
+input:focus{
+
+    outline:none;
+
+    box-shadow:0 0 20px cyan;
+}
+
+button{
+
+    padding:15px 25px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+    45deg,
+    #ff416c,
+    #ff4b2b);
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:scale(1.05);
+}
+
+.weather-card{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.18);
+
+    box-shadow:0 0 20px rgba(255,255,255,.15);
+}
+
+.weather-card img{
+    width:120px;
+}
+
+.weather-card h2{
+    font-size:2rem;
+}
+
+.weather-card h3{
+    font-size:3rem;
+    margin:10px 0;
+}
+
+.weather-card p{
+    margin:8px 0;
+    font-size:1.1rem;
+}
+
+.error{
+
+    margin-top:20px;
+
+    padding:12px;
+
+    background:#ff3b3b;
+
+    border-radius:10px;
+}
