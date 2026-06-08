@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weather Forecast</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌤 Weather Forecast</h1>
+
+    <div id="clock"></div>
+
+    <form method="POST">
+
+        <input
+        type="text"
+        name="city"
+        placeholder="Enter City Name"
+        required>
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+    {% if weather %}
+
+    <div class="weather-card">
+
+        <h2>{{ weather.city }}</h2>
+
+        <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png">
+
+        <h3>{{ weather.temp }}°C</h3>
+
+        <p>{{ weather.description }}</p>
+
+        <p>💧 Humidity: {{ weather.humidity }}%</p>
+
+        <p>🌬 Wind Speed: {{ weather.wind }} km/h</p>
+
+    </div>
+
+    {% endif %}
+
+    {% if error %}
+
+    <div class="error">
+        {{ error }}
+    </div>
+
+    {% endif %}
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
